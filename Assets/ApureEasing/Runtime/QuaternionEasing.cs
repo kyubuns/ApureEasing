@@ -4,7 +4,7 @@ using UnityEngine;
 
 namespace ApureEasing
 {
-    [UnitTitle("QuaternionEasing")]
+    [UnitTitle("Quaternion Easing")]
     [UnitCategory("ApureEasing")]
     public class QuaternionEasingNode : Unit
     {

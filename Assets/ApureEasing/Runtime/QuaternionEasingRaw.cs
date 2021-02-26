@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ApureEasing
 {
-    [UnitTitle("QuaternionEasingRaw")]
+    [UnitTitle("Quaternion Easing Raw")]
     [UnitCategory("ApureEasing")]
     public class QuaternionEasingRawNode : Unit
     {

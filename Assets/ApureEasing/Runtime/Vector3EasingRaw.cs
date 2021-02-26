@@ -3,7 +3,7 @@ using UnityEngine;
 
 namespace ApureEasing
 {
-    [UnitTitle("Vector3EasingRaw")]
+    [UnitTitle("Vector3 Easing Raw")]
     [UnitCategory("ApureEasing")]
     public class Vector3EasingRawNode : Unit
     {
