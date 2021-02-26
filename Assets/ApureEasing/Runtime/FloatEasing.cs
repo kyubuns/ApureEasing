@@ -53,12 +53,11 @@ namespace ApureEasing
 
             while (startTime + d > Time.time)
             {
-                yield return tick;
+                flow.Invoke(tick);
                 yield return null;
             }
-            yield return tick;
-
-            Flow.New(flow.stack.ToReference()).StartCoroutine(complete);
+            flow.Invoke(tick);
+            yield return complete;
         }
 
         private float GetOutput(Flow flow)
