@@ -57,7 +57,8 @@ namespace ApureEasing
                 yield return null;
             }
             yield return tick;
-            flow.Invoke(complete);
+
+            Flow.New(flow.stack.ToReference()).StartCoroutine(complete);
         }
 
         private Vector3 GetOutput(Flow flow)
