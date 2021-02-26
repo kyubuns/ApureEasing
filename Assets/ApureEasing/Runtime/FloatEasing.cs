@@ -33,6 +33,10 @@ namespace ApureEasing
         public ValueInput startValue { get; private set; }
 
         private float startTime;
+        private float cachedDuration;
+        private float cachedStartValue;
+        private float cachedEndValue;
+        private Easing cachedEasing;
 
         protected override void Definition()
         {
@@ -48,10 +52,13 @@ namespace ApureEasing
 
         private IEnumerator RunCoroutine(Flow flow)
         {
-            var d = flow.GetValue<float>(duration);
+            cachedDuration = flow.GetValue<float>(duration);
+            cachedStartValue = flow.GetValue<float>(startValue);
+            cachedEndValue = flow.GetValue<float>(endValue);
+            cachedEasing = flow.GetValue<Easing>(easing);
             startTime = Time.time;
 
-            while (startTime + d > Time.time)
+            while (startTime + cachedDuration > Time.time)
             {
                 flow.Invoke(tick);
                 yield return null;
@@ -62,14 +69,9 @@ namespace ApureEasing
 
         private float GetOutput(Flow flow)
         {
-            var t = flow.GetValue<Easing>(easing);
-            var s = flow.GetValue<float>(startValue);
-            var e = flow.GetValue<float>(endValue);
-            var d = flow.GetValue<float>(duration);
-
-            if (!(startTime + d > Time.time)) return e;
-            var v = (Time.time - startTime) / d;
-            return Mathf.Lerp(s, e, EasingConvert.Get(t, v));
+            if (!(startTime + cachedDuration > Time.time)) return cachedEndValue;
+            var v = (Time.time - startTime) / cachedDuration;
+            return Mathf.Lerp(cachedStartValue, cachedEndValue, EasingConvert.Get(cachedEasing, v));
         }
     }
 }

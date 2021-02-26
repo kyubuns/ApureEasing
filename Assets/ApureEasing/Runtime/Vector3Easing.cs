@@ -33,6 +33,10 @@ namespace ApureEasing
         public ValueInput startValue { get; private set; }
 
         private float startTime;
+        private float cachedDuration;
+        private Vector3 cachedStartValue;
+        private Vector3 cachedEndValue;
+        private Easing cachedEasing;
 
         protected override void Definition()
         {
@@ -48,10 +52,13 @@ namespace ApureEasing
 
         private IEnumerator RunCoroutine(Flow flow)
         {
-            var d = flow.GetValue<float>(duration);
+            cachedDuration = flow.GetValue<float>(duration);
+            cachedStartValue = flow.GetValue<Vector3>(startValue);
+            cachedEndValue = flow.GetValue<Vector3>(endValue);
+            cachedEasing = flow.GetValue<Easing>(easing);
             startTime = Time.time;
 
-            while (startTime + d > Time.time)
+            while (startTime + cachedDuration > Time.time)
             {
                 flow.Invoke(tick);
                 yield return null;
@@ -62,14 +69,9 @@ namespace ApureEasing
 
         private Vector3 GetOutput(Flow flow)
         {
-            var t = flow.GetValue<Easing>(easing);
-            var s = flow.GetValue<Vector3>(startValue);
-            var e = flow.GetValue<Vector3>(endValue);
-            var d = flow.GetValue<float>(duration);
-
-            if (!(startTime + d > Time.time)) return e;
-            var v = (Time.time - startTime) / d;
-            return Vector3.Lerp(s, e, EasingConvert.Get(t, v));
+            if (!(startTime + cachedDuration > Time.time)) return cachedEndValue;
+            var v = (Time.time - startTime) / cachedDuration;
+            return Vector3.Lerp(cachedStartValue, cachedEndValue, EasingConvert.Get(cachedEasing, v));
         }
     }
 }
