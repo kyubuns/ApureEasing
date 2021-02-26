@@ -4,6 +4,7 @@ Easing library for Unity VisualScripting
 ## Instructions
 
 - Package Manager `https://github.com/kyubuns/ApureEasing.git?path=Assets/ApureEasing`
+- Set ApureEasing to Project Settings > Visual Scripting > Node Library, And click "Regenerate Units" button.
 
 ## Node
 
