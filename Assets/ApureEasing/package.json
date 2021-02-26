@@ -1,0 +1,16 @@
+{
+  "name": "dev.kyubuns.apureeasing",
+  "displayName": "ApureEasing",
+  "version": "1.0.0",
+  "unity": "2021.1",
+  "description": "Easing library for Visual Scripting",
+  "documentationUrl": "https://github.com/kyubuns/ApureEasing",
+  "dependencies": {
+  },
+  "author": {
+    "name": "kyubuns",
+    "email": "kyubuns@gmail.com",
+    "url": "https://kyubuns.dev/"
+  },
+  "type": "library"
+}
