@@ -46,7 +46,7 @@ namespace ApureEasing
             value = ValueOutput(nameof(value), GetOutput);
         }
 
-        IEnumerator RunCoroutine(Flow flow)
+        private IEnumerator RunCoroutine(Flow flow)
         {
             var d = flow.GetValue<float>(duration);
             startTime = Time.time;
