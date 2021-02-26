@@ -15,8 +15,7 @@ namespace ApureEasing
         public ControlOutput tick { get; private set; }
 
         [DoNotSerialize]
-        [PortLabelHidden]
-        public ValueOutput outValue { get; private set; }
+        public ValueOutput value { get; private set; }
 
         [DoNotSerialize]
         public ControlOutput complete { get; private set; }
@@ -44,7 +43,7 @@ namespace ApureEasing
             duration = ValueInput(nameof(duration), 1f);
             startValue = ValueInput(nameof(startValue), Vector3.zero);
             endValue = ValueInput(nameof(endValue), Vector3.one);
-            outValue = ValueOutput(nameof(outValue), GetOutput);
+            value = ValueOutput(nameof(value), GetOutput);
         }
 
         IEnumerator RunCoroutine(Flow flow)
