@@ -12,13 +12,13 @@ namespace ApureEasing
         public ControlInput start { get; private set; }
 
         [DoNotSerialize]
+        public ControlOutput complete { get; private set; }
+
+        [DoNotSerialize]
         public ControlOutput tick { get; private set; }
 
         [DoNotSerialize]
         public ValueOutput value { get; private set; }
-
-        [DoNotSerialize]
-        public ControlOutput complete { get; private set; }
 
         [DoNotSerialize]
         public ValueInput easing { get; private set; }
@@ -41,8 +41,8 @@ namespace ApureEasing
         protected override void Definition()
         {
             start = ControlInputCoroutine(nameof(start), RunCoroutine);
-            tick = ControlOutput(nameof(tick));
             complete = ControlOutput(nameof(complete));
+            tick = ControlOutput(nameof(tick));
             easing = ValueInput(nameof(easing), Easing.Linear);
             duration = ValueInput(nameof(duration), 1f);
             startValue = ValueInput(nameof(startValue), Vector2.zero);
