@@ -12,7 +12,15 @@ Easing library for Unity VisualScripting
 
 ## Node
 
+### Basic
+
 <img width="658" alt="Screen Shot 2021-02-27 at 2 49 49" src="https://user-images.githubusercontent.com/961165/109336805-448e9a80-78a7-11eb-92ff-5404e6f46848.png">
+
+### Raw
+
+Input 0 ~ 1, Return Value
+
+<img width="429" alt="Screen Shot 2021-02-27 at 11 22 21" src="https://user-images.githubusercontent.com/961165/109372667-1c765a00-78ee-11eb-9351-1ae9e74d2513.png">
 
 ## Requirements
 
