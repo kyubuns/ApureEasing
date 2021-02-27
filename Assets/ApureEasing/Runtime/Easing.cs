@@ -1,0 +1,37 @@
+namespace ApureEasing
+{
+    public enum Easing
+    {
+        Linear,
+        InBack,
+        OutBack,
+        InOutBack,
+        InBounce,
+        OutBounce,
+        InOutBounce,
+        InCirc,
+        OutCirc,
+        InOutCirc,
+        InCubic,
+        OutCubic,
+        InOutCubic,
+        InElastic,
+        OutElastic,
+        InOutElastic,
+        InExpo,
+        OutExpo,
+        InOutExpo,
+        InQuad,
+        OutQuad,
+        InOutQuad,
+        InQuart,
+        OutQuart,
+        InOutQuart,
+        InQuint,
+        OutQuint,
+        InOutQuint,
+        InSine,
+        OutSine,
+        InOutSine,
+    }
+}
