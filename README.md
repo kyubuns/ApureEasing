@@ -3,7 +3,7 @@ Easing library for Unity VisualScripting
 
 <a href="https://www.buymeacoffee.com/kyubuns" target="_blank"><img src="https://cdn.buymeacoffee.com/buttons/default-orange.png" alt="Buy Me A Coffee" height="41" width="174"></a>
 
-![c](https://user-images.githubusercontent.com/961165/109345137-0ac39100-78b3-11eb-9890-81325aabfef2.gif)
+![e1](https://user-images.githubusercontent.com/961165/109410674-dd283600-79df-11eb-8354-ab9797514876.gif)
 
 ## Instructions
 
