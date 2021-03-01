@@ -29,6 +29,10 @@ namespace ApureEasing
             startValue = ValueInput(nameof(startValue), Quaternion.identity);
             endValue = ValueInput(nameof(endValue), Quaternion.identity);
             value = ValueOutput(nameof(value), GetOutput);
+            Requirement(input, value);
+            Requirement(easing, value);
+            Requirement(startValue, value);
+            Requirement(endValue, value);
         }
 
         private Quaternion GetOutput(Flow flow)

@@ -29,6 +29,10 @@ namespace ApureEasing
             startValue = ValueInput(nameof(startValue), 0f);
             endValue = ValueInput(nameof(endValue), 1f);
             value = ValueOutput(nameof(value), GetOutput);
+            Requirement(input, value);
+            Requirement(easing, value);
+            Requirement(startValue, value);
+            Requirement(endValue, value);
         }
 
         private float GetOutput(Flow flow)

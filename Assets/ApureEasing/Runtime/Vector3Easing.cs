@@ -48,6 +48,13 @@ namespace ApureEasing
             startValue = ValueInput(nameof(startValue), Vector3.zero);
             endValue = ValueInput(nameof(endValue), Vector3.one);
             value = ValueOutput(nameof(value), GetOutput);
+            Succession(start, tick);
+            Succession(start, complete);
+            Assignment(start, value);
+            Requirement(easing, start);
+            Requirement(duration, start);
+            Requirement(startValue, start);
+            Requirement(endValue, start);
         }
 
         private IEnumerator RunCoroutine(Flow flow)
