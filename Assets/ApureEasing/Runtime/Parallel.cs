@@ -29,7 +29,7 @@ namespace ApureEasing
 
         protected override void Definition()
         {
-            enter = ControlInput(nameof(enter), RunCoroutine);
+            enter = ControlInput(nameof(enter), Run);
 
             next = new List<ControlOutput>();
             for (var i = 0; i < Count; i++)
@@ -40,7 +40,7 @@ namespace ApureEasing
             }
         }
 
-        private ControlOutput RunCoroutine(Flow flow)
+        private ControlOutput Run(Flow flow)
         {
             var reference = flow.stack.ToReference();
             foreach (var output in next)
