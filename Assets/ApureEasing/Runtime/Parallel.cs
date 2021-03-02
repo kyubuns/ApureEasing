@@ -17,8 +17,8 @@ namespace ApureEasing
         [UnitHeaderInspectable("Count")]
         public int Count
         {
-            get => Mathf.Max(2, count);
-            set => count = Mathf.Max(value, 2);
+            get => Mathf.Max(1, count);
+            set => count = Mathf.Max(value, 1);
         }
 
         [DoNotSerialize]
